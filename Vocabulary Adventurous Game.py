@@ -30,7 +30,7 @@ def unique(total,generated_numbers1):
 
 message = """
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-\t\t\t\t\t\t\tWelcome to the Vocabulary Adventurous Game!
+\t\t\t\t\t\t\t🔤 Welcome to the Vocabulary Adventurous Game!
 
 In this game, you'll embark on an exciting journey to expand your vocabulary by guessing words based on given clues.
 
@@ -40,7 +40,7 @@ Here's how to play:
 
 Your goal is to correctly guess the word that corresponds to the clue provided at each level.
 
-2. levels:
+2. Levels:
 
 The game is divided into four distinct levels, each increasing in difficulty:
 
@@ -64,7 +64,6 @@ This variable keeps track of the number of consecutive times you have successful
 Each time you complete the final level (i.e., after the Hard level), your streak count increases by 1.
 If you give up during any level (by pressing '2'), your streak resets to 0.
 Keep pushing your limits and try to beat your high streak!
-
 5. Tips for Success:
 
 Think about the clue carefully and consider multiple meanings or associations.
@@ -77,14 +76,14 @@ Enjoy the process of learning new words and challenging yourself as the game pro
             """
 def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
         print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-        print("\nlevel: ",level,"⚔️\t\t\t\t\t\t\tMode: "+mode,"\t\t\t\t\t\t\tStreaks: ",streaks,"🔥")
-        print("\nclue: "+ defi1)
+        print("\nLevel: ⚔️ ",level,"\t\t\t\t\t\t\tMode: 🔹"+mode,"\t\t\t\t\t\t\tStreaks: 🔥",streaks)
+        print("\nClue: "+ defi1)
         print("Word has",len1,"letters")
         print("\n------------------------------------------------------------------------------------------------------------------------------------------------------------")
-        dash = ["_ "]*len1 # dashes
+        dash = ["* "]*len1 # dashes
         while(True):
             print("\nMy Word: ","".join(dash))
-            print("\nlifeline: ",lifeline)
+            print("\nLifeline: ",lifeline)
             guess = input("\nEnter your Word: ").lower()
             if(len(guess) == 1):
                 if(guess == "1"):
@@ -133,29 +132,29 @@ def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
                     streaks += 1
                     break
         return level, mode,lifeline,streaks,n
-print("\t\t\t\t\t\t\tWelcome to Vocabulary Adventures Game\n")
+print("\t\t\t\t\t\t\t🔤 Welcome to Vocabulary Adventures Game\n")
 print("\n loading game....", flush=True)
 time.sleep(3)
 sys.stdout.write('\033[F')  # Move cursor up one line.
 sys.stdout.write('\033[K')  # Clear to the end of line.
 print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-print("\t\t\t\t\t\t\t\t\tRules:-")
+print("\t\t\t\t\t\t\t\t\t📜 Rules:-")
 print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-print("1. Guess the word by the given clue.")
+print("1. Guess the word 🎯 by the given clue🔍.")
 time.sleep(2)
-print("2. You have 1 lifeline each reveals one letter of word.")
+print("2. You have 1 💡 lifeline each reveals one letter of word.")
 time.sleep(2)
-print("3. Enter 1 to use lifeline.")
+print("3. Enter 1 to use 💡 lifeline.")
 time.sleep(2)
-print("4. Enter 2 to give up.")
+print("4. Enter 2 to 😩 give up.")
 time.sleep(2)
-print("5. Enter ? to get the information about the game.")
+print("5. Enter ? to get the information about the game 📝.")
 time.sleep(2)
 print("6. Word should not contain any special characters.")
 time.sleep(2)
 print("7. You have 4 Modes.")
 time.sleep(2)
-print("   Easy.\n   Intermediate.\n   Professional.\n   Hard.")
+print("  ✌️ Easy.\n  🤨 Intermediate.\n  👔 Professional.\n  💪 Hard.")
 time.sleep(3)
 print("\n   Enter e for Easy.\n   Enter i for Intermediate.\n   Enter p for Professional.\n   Enter h for Hard.")
 time.sleep(3)
@@ -169,7 +168,7 @@ while(True):
         print("You have entered wrong mode!!")
         print("Please enter the correct mode!!")
 print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-print("\t\t\t\t\t\t\t\tLet's start the game!!")
+print("\t\t\t\t\t\t\t\t🎉 Let's start the game!!")
 
 while(True):
     if(n == "e"):
@@ -218,7 +217,7 @@ while(True):
         }
         n1 = unique(total,generated_number1)
         lifeline = 3
-        mode = "easy"
+        mode = "EASY"
         defi1 = list(clue1.values())[n1]   # clue 1
         word1 = list(clue1.keys())[n1] #word 1
         len1 = len(list(clue1.keys())[n1]) #len of word 1
@@ -274,7 +273,7 @@ while(True):
         defi2 = list(clue2.values())[n2]   #clue 2
         word2 = list(clue2.keys())[n2] #word 2
         len2 = len(list(clue2.keys())[n2])
-        mode = "Intermediate"
+        mode = "INTERMEDIATE"
         level2,mode,lifeline,streaks2,n = game(level2,mode,streaks2,defi2,len2,lifeline,word2,n)
     elif(n == "P"):
         clue3 = {
@@ -322,7 +321,7 @@ while(True):
             }
         lifeline = 3
         n3 = unique(total,generated_number3)
-        mode = "Professional"
+        mode = "PROFESSIONAL"
         defi3 = list(clue3.values())[n3]   #clue 3
         word3 = list(clue3.keys())[n3] #word 3
         len3 = len(list(clue3.keys())[n3])
@@ -373,7 +372,7 @@ while(True):
         }
         n4 = unique(total,generated_number4)
         lifeline = 3
-        mode = "Hard"
+        mode = "HARD"
         defi4 = list(clue4.values())[n4]   #clue 4
         word4 = list(clue4.keys())[n4] #word 4
         len4 = len(list(clue4.keys())[n4])
