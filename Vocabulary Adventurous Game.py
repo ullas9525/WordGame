@@ -113,7 +113,7 @@ def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
                     print("You quit the game!!")
                     while(True):
                         n = input("\nEnter the Mode you want to play: ")
-                        if(n == "e" or n == "i" or n == "P" or n == "h"):#h
+                        if(n == "e" or n == "i" or n == "P" or n == "h"):
                             break
                         else:
                             print("You have entered wrong mode!!")
