@@ -76,20 +76,20 @@ Enjoy the process of learning new words and challenging yourself as the game pro
             """
 def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
         print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-        print("\nLevel: ⚔️ ",level,"\t\t\t\t\t\t\tMode: 🔹"+mode,"\t\t\t\t\t\t\tStreaks: 🔥",streaks)
+        print("\n\033[34mLevel: ⚔️ \033[0m",level,"\t\t\t\t\t\t\tMode: 🔹\033[0m"+mode,"\t\t\t\t\t\t\tStreaks: 🔥\033[0m",streaks)
         print("\nClue: "+ defi1)
-        print("Word has",len1,"letters")
+        print("\033[91mWord has",len1,"letters\033[0m")
         print("\n------------------------------------------------------------------------------------------------------------------------------------------------------------")
-        dash = ["* "]*len1 # dashes
+        dash = ["\033[32m* \033[0m"]*len1 # dashes
         while(True):
-            print("\nMy Word: ","".join(dash))
-            print("\nLifeline: ",lifeline)
+            print("\n\033[33mMy Word: \033[0m","".join(dash))
+            print("\n\033[31mLifeline: \033[0m",lifeline)
             guess = input("\nEnter your Word: ").lower()
             if(len(guess) == 1):
                 if(guess == "1"):
                     lifeline-= 1
                     if(lifeline == -1):
-                        print("You have already used all lifelines!!")
+                        print("\033[31mYou have already used all lifelines!!\033[0m")
                         lifeline = 0
                     else:
                         word_letters = []
@@ -103,44 +103,44 @@ def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
                                 if ch == random_letter:
                                     dash[i] = random_letter
                 elif(guess == "2"):
-                    print("You gave up!!")
+                    print("\033[32mYou gave up!!\033[0m")
                     print("The word was: ",word1)
                     streaks = 0
                     break
                 elif(guess == "?"):
-                    print("Exit from the mode and get the information about the game!!")
+                    print("\033[31mExit from the mode and get the information about the game!!\033[35m")
                 elif(guess == "q"):
                     print("You quit the game!!")
                     while(True):
-                        n = input("\nEnter the Mode you want to play: ")
+                        n = input("\n\033[35mEnter the Mode you want to play: \033[0m")
                         if(n == "e" or n == "i" or n == "P" or n == "h"):
                             break
                         else:
-                            print("You have entered wrong mode!!")
-                            print("Please enter the correct mode!!")
+                            print("\033[31mYou have entered wrong mode!!")
+                            print("Please enter the correct mode!!\033[0m")
                     break
                 else:
-                    print("My word has only", len1 ,"letters,so Try again with different word!!")
+                    print("\033[31mMy word has only", len1 ,"letters,so Try again with different word!!\033[0m")
             elif(len(guess) != len1):
-                print("My word has only", len1 ,"letters,so Try again with different word!!")
+                print("\033[31mMy word has only", len1 ,"letters,so Try again with different word!!\033[0m")
             else:
                 if(guess != word1):
-                    print("Well tried but it's not my word")
+                    print("\033[32mWell tried but it's not my word\033[0m")
                 else:
-                    print("Congralutations!!, you guessed the correct word")
+                    print("\033[32mCongralutations!!, you guessed the correct word\033[0m")
                     level += 1
                     streaks += 1
                     break
         return level, mode,lifeline,streaks,n
-print("\t\t\t\t\t\t\t🔤 Welcome to Vocabulary Adventures Game\n")
+print("\t\t\t\t\t\t\t🔤 \033[36mWelcome to Vocabulary Adventures Game\033[0m\n")
 print("\n loading game....", flush=True)
 time.sleep(3)
 sys.stdout.write('\033[F')  # Move cursor up one line.
 sys.stdout.write('\033[K')  # Clear to the end of line.
 print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-print("\t\t\t\t\t\t\t\t\t📜 Rules:-")
+print("\t\t\t\t\t\t\t\t\t📜 \033[31mRules:-\033[0m")
 print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-print("1. Guess the word 🎯 by the given clue🔍.")
+print("\033[33m1. Guess the word 🎯 by the given clue🔍.")
 time.sleep(2)
 print("2. You have 1 💡 lifeline each reveals one letter of word.")
 time.sleep(2)
@@ -156,19 +156,19 @@ print("7. You have 4 Modes.")
 time.sleep(2)
 print("  ✌️ Easy.\n  🤨 Intermediate.\n  👔 Professional.\n  💪 Hard.")
 time.sleep(3)
-print("\n   Enter e for Easy.\n   Enter i for Intermediate.\n   Enter p for Professional.\n   Enter h for Hard.")
+print("\n   Enter e for Easy.\n   Enter i for Intermediate.\n   Enter p for Professional.\n   Enter h for Hard.\033[0m")
 time.sleep(3)
-print("I think you have read all the Rules!!\n\n")
+print("\033[32mI think you have read all the Rules!!\n\n\033[0m")
 time.sleep(2)
 while(True):
-    n = input("\nEnter the Mode you want to play: ")
+    n = input("\n\033[35mEnter the Mode you want to play: \033[0m")
     if(n == "e" or n == "i" or n == "P" or n == "h"):
         break
     else:
-        print("You have entered wrong mode!!")
-        print("Please enter the correct mode!!")
+        print("\033[32mYou have entered wrong mode!!")
+        print("Please enter the correct mode!!\033[0m")
 print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-print("\t\t\t\t\t\t\t\t🎉 Let's start the game!!")
+print("\t\t\t\t\t\t\t\t🎉 \033[33mLet's start the game!!\033[0m")
 
 while(True):
     if(n == "e"):
@@ -216,7 +216,7 @@ while(True):
             "game": "An activity or sport with rules that involves 'competition and fun'.",
         }
         n1 = unique(total,generated_number1)
-        lifeline = 3
+        lifeline = 1
         mode = "EASY"
         defi1 = list(clue1.values())[n1]   # clue 1
         word1 = list(clue1.keys())[n1] #word 1
