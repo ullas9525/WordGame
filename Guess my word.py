@@ -1,4 +1,6 @@
 import random
+import time
+import sys
 def guessword(guess,word):
     correct_letters = 0
     correct_position = 0
@@ -34,8 +36,14 @@ words_list = [ "ABLE", "ACID", "AUNT",
   "YOGA",
   "ZERO", "ZINC", "ZONE"]
 while(True):
-    print("\t\t\nWelcome to the Word Guessing Game!!")
-    print("\nRules:-")
+    print("\t\t\t\t\t\t\t🔤 \033[36mWelcome to the Word Guessing Game!!\033[0m\n")
+    print("\n loading game....", flush=True)
+    time.sleep(3)
+    sys.stdout.write('\033[F')  # Move cursor up one line.
+    sys.stdout.write('\033[K')  # Clear to the end of line.
+    print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
+    print("\t\t\t\t\t\t\t\t\t📜 \033[31mRules:-\033[0m")
+    print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("\t1. You have 10 chances to guess.")
     print("\t2. Word has 4 unique letters(letter should not repeat).")
     print("\t3. A word should have a specific meaning.")

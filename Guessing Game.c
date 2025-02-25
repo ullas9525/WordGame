@@ -62,12 +62,15 @@ int main() {
     int copy = 0,correct_letter = 0,correct_position = 0;
     char *word = words_list[randomIndex];
     char guess[10];
-    printf("\t\t Welcome to Word Guessing Game!!\n");
-    printf("Rules:-\n");
-    printf("1. You have 10 Chances to guess the word.\n");
+    printf("\t\t\t\t\t\t\t Welcome to Word Guessing Game!!\n");
+    printf("------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    printf("\t\t\t\t\t\t\t\t\t  Rules:-\n");
+    printf("------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    printf("1. You have 10 Chances to guess the word .\n");
     printf("2. Word should have 4 unique letters(letter should not repeat).\n");
     printf("3. A word should have specific meaning.\n");
     printf("I think you have read all the above rules.\n");
+    printf("------------------------------------------------------------------------------------------------------------------------------------------------------------");
     printf("Let's begin the Game.\n");
     int attempts = 10;
     int guessed = 0;
