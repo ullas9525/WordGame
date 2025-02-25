@@ -44,16 +44,20 @@ while(True):
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("\t\t\t\t\t\t\t\t\t📜 \033[31mRules:-\033[0m")
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-    print("\t1. You have 10 chances to guess.")
-    print("\t2. Word has 4 unique letters(letter should not repeat).")
-    print("\t3. A word should have a specific meaning.")
+    print("1. You have 10 chances to guess.")
+    print("2. Word has 4 unique letters(letter should not repeat).")
+    print("3. A word should have a specific meaning.")
+    print("4.Enter q to exit the game.")
     print("\nI think you have read all the rules above")
-    print("\nLet's begin the game:-")
+    print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
+    print("Let's begin the game:-")
     word = random.choice(words_list)
     attempts = 10
+    Streaks = 0
     guessed = 0
     while(attempts>0):
-        print("\nYou have", attempts, "chances left.")
+        print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
+        print("Chances left:",attempts)
         guess = input("\nEnter your Guess: ").upper()
         if(len(set(guess)) != 4 or len(guess) != 4):
             print("Read the above rules again!!")
