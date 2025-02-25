@@ -1,6 +1,7 @@
 import random
 import time
 import sys
+
 def guessword(guess,word):
     correct_letters = 0
     correct_position = 0
@@ -35,6 +36,29 @@ words_list = [ "ABLE", "ACID", "AUNT",
   "WAIT", "WANT", "WAVE", "WEAK", "WEAR", "WEST", "WIDE", "WIND", "WINE", "WISH", "WOLF", "WORD", "WORM", "WRAP",
   "YOGA",
   "ZERO", "ZINC", "ZONE"]
+def guessmyword(word,guessed):
+    attempts = 10
+    streaks = 0
+    while(attempts >0):
+        print("Chances left:",attempts)
+        print("Streaks:",streaks)
+        guess = input("\nEnter your Guess: ").upper()
+        if(guess == "Q"):
+            print("You have exited the game!!")
+            break
+        if(len(set(guess)) != 4 or len(guess) != 4):
+            print("Read the above rules again!!")
+            print("Try again with different word!!\n")
+            continue
+        correct_letters,correct_position = guessword(guess,word)
+        print("correct letters:",correct_letters,", correct position:", correct_position)
+        if(correct_position == 4):
+            print("Congratulations!!\nYou have guessed the correct word !")
+            guessed = 1
+            streaks += 1
+            return streaks,guessed
+        attempts -= 1
+    return guessed,guess
 while(True):
     print("\t\t\t\t\t\t\t🔤 \033[36mWelcome to the Word Guessing Game!!\033[0m\n")
     print("\n loading game....", flush=True)
@@ -45,30 +69,22 @@ while(True):
     print("\t\t\t\t\t\t\t\t\t📜 \033[31mRules:-\033[0m")
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("1. You have 10 chances to guess.")
+    time.sleep(2)
     print("2. Word has 4 unique letters(letter should not repeat).")
+    time.sleep(2)
     print("3. A word should have a specific meaning.")
+    time.sleep(2)
     print("4.Enter q to exit the game.")
+    time.sleep(2)
     print("\nI think you have read all the rules above")
+    time.sleep(2)
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("Let's begin the game:-")
     word = random.choice(words_list)
-    attempts = 10
-    Streaks = 0
     guessed = 0
-    while(attempts>0):
-        print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-        print("Chances left:",attempts)
-        guess = input("\nEnter your Guess: ").upper()
-        if(len(set(guess)) != 4 or len(guess) != 4):
-            print("Read the above rules again!!")
-            print("Try again with different word!!\n")
-            continue
-        correct_letters,correct_position = guessword(guess,word)
-        print("correct letters:",correct_letters,", correct position:", correct_position)
-        if(correct_position == 4):
-            print("Congratulations!!\nYou have guessed the correct word !")
-            guessed = 1
-            break
-        attempts -= 1
-    if(guessed == 0):
+    guessed,guess = guessmyword(word,guessed)
+    if(guess == "Q"):
+        print("The correct word was " + word)
+        break
+    elif(guessed == 0):
         print("\nYou have ran out of attempts.\nThe correct word was " + word)
