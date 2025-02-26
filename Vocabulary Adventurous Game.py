@@ -1,5 +1,6 @@
 import time
 import random
+import os
 import sys
 #variable
 streaks1 = 0
@@ -11,6 +12,11 @@ level1 = 1
 level2 = 1
 level3 = 1
 level4 = 1
+
+try:
+    terminal_width = os.get_terminal_size().columns
+except OSError:
+    terminal_width = 80
 
 
 generated_number1 = set()
@@ -31,7 +37,6 @@ def unique(total,generated_numbers1):
 message = """
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 \t\t\t\t\t\t\t🔤 Welcome to the Vocabulary Adventurous Game!
-
 In this game, you'll embark on an exciting journey to expand your vocabulary by guessing words based on given clues.
 
 Here's how to play:
@@ -132,13 +137,13 @@ def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
                     streaks += 1
                     break
         return level, mode,lifeline,streaks,n
-print("\t\t\t\t\t\t\t🔤 \033[36mWelcome to Vocabulary Adventures Game\033[0m\n")
-print("\n loading game....", flush=True)
+print("🔤 \033[36mWelcome to Vocabulary Adventures Game\033[0m\n".center(terminal_width))
+print("\n loading game....".center(terminal_width),flush=True)
 time.sleep(3)
 sys.stdout.write('\033[F')  # Move cursor up one line.
 sys.stdout.write('\033[K')  # Clear to the end of line.
 print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-print("\t\t\t\t\t\t\t\t\t📜 \033[31mRules:-\033[0m")
+print("📜 \033[31mRules:-\033[0m".center(terminal_width))
 print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
 print("\033[33m1. Guess the word 🎯 by the given clue🔍.")
 time.sleep(2)
@@ -154,15 +159,13 @@ print("6. Word should not contain any special characters.")
 time.sleep(2)
 print("7. You have 4 Modes.")
 time.sleep(2)
-print("  ✌️ Easy.\n  🤨 Intermediate.\n  👔 Professional.\n  💪 Hard.")
-time.sleep(3)
-print("\n   Enter e for Easy.\n   Enter i for Intermediate.\n   Enter p for Professional.\n   Enter h for Hard.\033[0m")
+print("  e - ✌️ Easy.\n  i - 🤨 Intermediate.\n  p - 👔 Professional.\n  h - 💪 Hard.")
 time.sleep(3)
 print("\033[32mI think you have read all the Rules!!\n\n\033[0m")
 time.sleep(2)
 while(True):
     n = input("\n\033[35mEnter the Mode you want to play: \033[0m")
-    if(n == "e" or n == "i" or n == "P" or n == "h"):
+    if(n == "e" or n == "i" or n == "P" or n == "h" or n == "?"):
         break
     else:
         print("\033[32mYou have entered wrong mode!!")
@@ -216,7 +219,7 @@ while(True):
             "game": "An activity or sport with rules that involves 'competition and fun'.",
         }
         n1 = unique(total,generated_number1)
-        lifeline = 1
+        lifeline = 3
         mode = "EASY"
         defi1 = list(clue1.values())[n1]   # clue 1
         word1 = list(clue1.keys())[n1] #word 1
