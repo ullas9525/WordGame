@@ -78,7 +78,6 @@ def guessmyword(word,guessed):
 while(True):
     print("🔤 \033[36mWelcome to the Word Guessing Game!!\033[0m\n".center(terminal_width))
     print("\n loading game....", flush=True)
-    #time.sleep(delay2)
     key_interrupt(delay2)
     sys.stdout.write('\033[F')  # Move cursor up one line.
     sys.stdout.write('\033[K')  # Clear to the end of line.
