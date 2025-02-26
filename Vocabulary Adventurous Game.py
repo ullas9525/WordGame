@@ -81,7 +81,7 @@ Enjoy the process of learning new words and challenging yourself as the game pro
             """
 def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
         print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-        print("\n\033[34mLevel: ⚔️ \033[0m",level,"\t\t\t\t\t\t\tMode: 🔹\033[0m"+mode,"\t\t\t\t\t\t\tStreaks: 🔥\033[0m",streaks)
+        print("\n\033[34mLevel: ⚔️ \033[0m",level,"Mode: 🔹\033[0m"+mode+"".center(terminal_width),"Streaks: 🔥\033[0m",streaks,"".rjust(terminal_width))
         print("\nClue: "+ defi1)
         print("\033[91mWord has",len1,"letters\033[0m")
         print("\n------------------------------------------------------------------------------------------------------------------------------------------------------------")
@@ -165,8 +165,11 @@ print("\033[32mI think you have read all the Rules!!\n\n\033[0m")
 time.sleep(2)
 while(True):
     n = input("\n\033[35mEnter the Mode you want to play: \033[0m")
-    if(n == "e" or n == "i" or n == "P" or n == "h" or n == "?"):
+    if(n == "e" or n == "i" or n == "P" or n == "h"):
         break
+    elif(n == "?"):
+        print(message)
+        continue
     else:
         print("\033[32mYou have entered wrong mode!!")
         print("Please enter the correct mode!!\033[0m")
@@ -380,6 +383,3 @@ while(True):
         word4 = list(clue4.keys())[n4] #word 4
         len4 = len(list(clue4.keys())[n4])
         level4,mode,lifeline,streaks4,n = game(level4,mode,streaks4,defi4,len4,lifeline,word4,n)
-    elif(n == "?"):
-        print(message)
-        continue
