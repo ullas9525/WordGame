@@ -382,4 +382,4 @@ while(True):
         level4,mode,lifeline,streaks4,n = game(level4,mode,streaks4,defi4,len4,lifeline,word4,n)
     elif(n == "?"):
         print(message)
-        break
+        continue
