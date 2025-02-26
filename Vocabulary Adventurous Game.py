@@ -100,13 +100,13 @@ def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
         dash = ["\033[32m* \033[0m"]*len1 # dashes
         while(True):
             print("\n\033[33mMy Word: \033[0m","".join(dash))
-            print("\n\033[31mLifeline: \033[0m",lifeline)
+            print("\n\033[31mLifeline: 💡\033[0m",lifeline)
             guess = input("\nEnter your Word: ").lower()
             if(len(guess) == 1):
                 if(guess == "1"):
                     lifeline-= 1
                     if(lifeline == -1):
-                        print("\033[31mYou have already used all lifelines!!\033[0m")
+                        print("\033[31mYou have already used all lifelines 💡!!\033[0m")
                         lifeline = 0
                     else:
                         word_letters = []
@@ -120,17 +120,17 @@ def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
                                 if ch == random_letter:
                                     dash[i] = random_letter
                 elif(guess == "2"):
-                    print("\033[32mYou gave up!!\033[0m")
+                    print("\033[32mYou gave up🏳️ !!\033[0m")
                     print("The word was: ",word1)
                     streaks = 0
                     break
                 elif(guess == "?"):
                     print("\033[31mExit from the mode and get the information about the game!!\033[35m")
                 elif(guess == "q"):
-                    print("You quit the game!!")
+                    print("You quit the game🏳️ !!")
                     while(True):
                         n = input("\n\033[35mEnter the Mode you want to play: \033[0m")
-                        if(n == "e" or n == "i" or n == "P" or n == "h"):
+                        if(n == "e" or n == "i" or n == "P" or n == "h" or n == "?"):
                             break
                         else:
                             print("\033[31mYou have entered wrong mode!!")
@@ -180,7 +180,6 @@ while(True):
     if(n == "e" or n == "i" or n == "P" or n == "h"):
         break
     elif(n == "?"):
-        print(message)
         continue
     else:
         print("\033[32mYou have entered wrong mode!!")
@@ -395,3 +394,6 @@ while(True):
         word4 = list(clue4.keys())[n4] #word 4
         len4 = len(list(clue4.keys())[n4])
         level4,mode,lifeline,streaks4,n = game(level4,mode,streaks4,defi4,len4,lifeline,word4,n)
+    elif(n == "?"):
+        print(message)
+        break
