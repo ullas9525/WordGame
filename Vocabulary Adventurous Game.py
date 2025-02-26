@@ -1,5 +1,6 @@
 import time
 import random
+import msvcrt
 import os
 import sys
 #variable
@@ -24,6 +25,17 @@ generated_number2 = set()
 generated_number3 = set()
 generated_number4 = set()
 total = 40
+
+delay1 = 2
+delay2 = 3
+def key_interrupt(delay):
+    start_time = time.time()
+    while time.time() - start_time < delay:
+        if msvcrt.kbhit():
+            msvcrt.getch()  # Consume the key press
+            break
+        time.sleep(0.1)
+    return 0
 
 def unique(total,generated_numbers1):
     if(len(generated_numbers1) == total):
@@ -81,7 +93,7 @@ Enjoy the process of learning new words and challenging yourself as the game pro
             """
 def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
         print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-        print("\n\033[34mLevel: ⚔️ \033[0m",level,"Mode: 🔹\033[0m"+mode+"".center(terminal_width),"Streaks: 🔥\033[0m",streaks,"".rjust(terminal_width))
+        print("\n\033[34mLevel: ⚔️ \033[0m",level,"\t\tMode: 🔹\033[0m",mode,"\t\tStreaks: 🔥\033[0m",streaks)
         print("\nClue: "+ defi1)
         print("\033[91mWord has",len1,"letters\033[0m")
         print("\n------------------------------------------------------------------------------------------------------------------------------------------------------------")
@@ -139,30 +151,30 @@ def game(level,mode,streaks,defi1,len1,lifeline,word1,n):
         return level, mode,lifeline,streaks,n
 print("🔤 \033[36mWelcome to Vocabulary Adventures Game\033[0m\n".center(terminal_width))
 print("\n loading game....".center(terminal_width),flush=True)
-time.sleep(3)
+key_interrupt(delay2)
 sys.stdout.write('\033[F')  # Move cursor up one line.
 sys.stdout.write('\033[K')  # Clear to the end of line.
 print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
 print("📜 \033[31mRules:-\033[0m".center(terminal_width))
 print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
 print("\033[33m1. Guess the word 🎯 by the given clue🔍.")
-time.sleep(2)
+key_interrupt(delay1)
 print("2. You have 1 💡 lifeline each reveals one letter of word.")
-time.sleep(2)
+key_interrupt(delay1)
 print("3. Enter 1 to use 💡 lifeline.")
-time.sleep(2)
+key_interrupt(delay1)
 print("4. Enter 2 to 😩 give up.")
-time.sleep(2)
+key_interrupt(delay1)
 print("5. Enter ? to get the information about the game 📝.")
-time.sleep(2)
+key_interrupt(delay1)
 print("6. Word should not contain any special characters.")
-time.sleep(2)
+key_interrupt(delay1)
 print("7. You have 4 Modes.")
-time.sleep(2)
+key_interrupt(delay1)
 print("  e - ✌️ Easy.\n  i - 🤨 Intermediate.\n  p - 👔 Professional.\n  h - 💪 Hard.")
-time.sleep(3)
+key_interrupt(delay2)
 print("\033[32mI think you have read all the Rules!!\n\n\033[0m")
-time.sleep(2)
+key_interrupt(delay1)
 while(True):
     n = input("\n\033[35mEnter the Mode you want to play: \033[0m")
     if(n == "e" or n == "i" or n == "P" or n == "h"):
