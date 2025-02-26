@@ -1,6 +1,12 @@
 import random
+import os
 import time
 import sys
+
+try:
+    terminal_width = os.get_terminal_size().columns
+except OSError:
+    terminal_width = 80
 
 def guessword(guess,word):
     correct_letters = 0
@@ -60,13 +66,13 @@ def guessmyword(word,guessed):
         attempts -= 1
     return guessed,guess
 while(True):
-    print("\t\t\t\t\t\t\t🔤 \033[36mWelcome to the Word Guessing Game!!\033[0m\n")
+    print("🔤 \033[36mWelcome to the Word Guessing Game!!\033[0m\n".center(terminal_width))
     print("\n loading game....", flush=True)
     time.sleep(3)
     sys.stdout.write('\033[F')  # Move cursor up one line.
     sys.stdout.write('\033[K')  # Clear to the end of line.
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
-    print("\t\t\t\t\t\t\t\t\t📜 \033[31mRules:-\033[0m")
+    print("📜 \033[31mRules:-\033[0m".center(terminal_width))
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("1. You have 10 chances to guess.")
     time.sleep(2)
