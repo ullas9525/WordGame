@@ -48,7 +48,7 @@ def guessmyword(word,guessed):
     attempts = 10
     streaks = 0
     while(attempts >0):
-        print("Chances left: 🎲",attempts)
+        print("\nChances left: 🎲",attempts)
         print("Streaks: 🔥",streaks)
         guess = input("\nEnter your Guess: ").upper()
         if(guess == "Q"):
@@ -61,7 +61,7 @@ def guessmyword(word,guessed):
         correct_letters,correct_position = guessword(guess,word)
         print("correct letters:",correct_letters,", correct position:", correct_position)
         if(correct_position == 4):
-            print("Congratulations🎉!!\nYou have guessed the correct word !")
+            print("Congratulations🎉!!\nYou have guessed the correct word !\n")
             guessed = 1
             streaks += 1
             return streaks,guessed
@@ -96,4 +96,4 @@ while(True):
         print("The correct word was " + word)
         break
     elif(guessed == 0):
-        print("\nYou have ran out of attempts🏳️.\nThe correct word was " + word)
+        print("\nYou have ran out of attempts🏳️.\nThe correct word was " + word,"\n")
