@@ -84,7 +84,7 @@ while(True):
     time.sleep(2)
     print("4. Enter q to exit the game.")
     time.sleep(2)
-    print("Read the rules properly before you regret")
+    print("\nI think you have read the rules above")
     time.sleep(3)
     print("-"*40)
     print("Let's begin the game:-")
