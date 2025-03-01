@@ -74,7 +74,7 @@ while(True):
     sys.stdout.write('\033[F')  # Move cursor up one line.
     sys.stdout.write('\033[K')  # Clear to the end of line.
     print("-"*40)
-    print("  📜 \033[31mRules:-\033[0m".center(terminal_width))
+    print("    📜 \033[31mRules:-\033[0m".center(terminal_width))
     print("-"*40)
     print("1. You have 10 chances🎲 to guess🎯.")
     time.sleep(2)
@@ -82,9 +82,9 @@ while(True):
     time.sleep(2)
     print("3. A word should have a specific meaning") 
     time.sleep(2)
-    print("4.Enter q to exit the game.")
+    print("4. Enter q to exit the game.")
     time.sleep(2)
-    print("Read the rules properly before regret")
+    print("Read the rules properly before you regret")
     time.sleep(3)
     print("-"*40)
     print("Let's begin the game:-")
