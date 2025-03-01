@@ -1,18 +1,10 @@
 import random
-import msvcrt
 import os
 import time
 import sys
 delay1 = 2
 delay2 = 3
-def key_interrupt(delay):
-    start_time = time.time()
-    while time.time() - start_time < delay:
-        if msvcrt.kbhit():
-            msvcrt.getch()  # Consume the key press
-            break
-        time.sleep(0.1)
-    return 0
+
 try:
     terminal_width = os.get_terminal_size().columns
 except OSError:
@@ -78,22 +70,22 @@ def guessmyword(word,guessed):
 while(True):
     print("🔤 \033[36mWelcome to the Word Guessing Game!!\033[0m\n".center(terminal_width))
     print("\n loading game....", flush=True)
-    key_interrupt(delay2)
+    time.sleep(3)
     sys.stdout.write('\033[F')  # Move cursor up one line.
     sys.stdout.write('\033[K')  # Clear to the end of line.
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("📜 \033[31mRules:-\033[0m".center(terminal_width))
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("1. You have 10 chances🎲 to guess🎯.")
-    key_interrupt(delay1)
+    time.sleep(2)
     print("2. Word has 4 unique letters(letter should not repeat).")
-    key_interrupt(delay1)
-    print("3. A word should have a specific meaning.")
-    key_interrupt(delay1)
+    time.sleep(2)
+    print("3. A word should have a specific meaning.") 
+    time.sleep(2)
     print("4.Enter q to exit the game.")
-    key_interrupt(delay1)
+    time.sleep(2)
     print("\nI think you have read all the rules above")
-    key_interrupt(delay1)
+    time.sleep(3)
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("Let's begin the game:-")
     word = random.choice(words_list)
