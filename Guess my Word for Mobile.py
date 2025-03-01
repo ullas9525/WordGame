@@ -73,9 +73,9 @@ while(True):
     time.sleep(3)
     sys.stdout.write('\033[F')  # Move cursor up one line.
     sys.stdout.write('\033[K')  # Clear to the end of line.
-    print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
+    print("-"*40)
     print("📜 \033[31mRules:-\033[0m".center(terminal_width))
-    print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
+    print("-"*40)
     print("1. You have 10 chances🎲 to guess🎯.")
     time.sleep(2)
     print("2. Word has 4 unique letters(letter should not repeat).")
@@ -86,7 +86,7 @@ while(True):
     time.sleep(2)
     print("\nI think you have read all the rules above")
     time.sleep(3)
-    print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
+    print("-"*40)
     print("Let's begin the game:-")
     word = random.choice(words_list)
     guessed = 0
