@@ -68,6 +68,7 @@ def guessmyword(word,guessed):
         attempts -= 1
     return guessed,guess
 while(True):
+    print("-"*40)
     print("🔤 \033[36mWelcome to the Word Guessing Game!!\033[0m\n".center(terminal_width))
     print("\n loading game....", flush=True)
     time.sleep(3)
