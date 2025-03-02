@@ -72,9 +72,9 @@ def guessmyword(word,guessed,streaks):
             print("Congratulations🎉!!\nYou have guessed the correct word !")
             guessed = 1
             streaks += 1
-            return guessed,guess
+            return guessed,guess,streaks
         attempts -= 1
-    return guessed,guess
+    return guessed,guess,streaks
 while(True):
     print("🔤 \033[36mWelcome to the Word Guessing Game!!\033[0m\n".center(terminal_width))
     print("\n loading game....", flush=True)
@@ -98,7 +98,7 @@ while(True):
     print("Let's begin the game:-")
     word = random.choice(words_list)
     guessed = 0
-    guessed,guess = guessmyword(word,guessed)
+    guessed,guess,streaks = guessmyword(word,guessed,streaks)
     if(guess == "Q"):
         print("The correct word was " + word)
         break
