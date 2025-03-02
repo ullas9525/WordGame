@@ -48,8 +48,7 @@ def guessmyword(word,guessed):
     attempts = 10
     streaks = 0
     while(attempts >0):
-        print("\nChances left: 🎲",attempts)
-        print("Streaks: 🔥",streaks)
+        print("\nChances left: 🎲",attempts,"\tStreaks: 🔥",streaks)
         guess = input("\nEnter your Guess: ").upper()
         if(guess == "Q"):
             print("You have exited the game!!🏳️")
