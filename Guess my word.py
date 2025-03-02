@@ -72,7 +72,7 @@ def guessmyword(word,guessed,streaks):
             print("Congratulations🎉!!\nYou have guessed the correct word !")
             guessed = 1
             streaks += 1
-            return guessed
+            return guessed,guess
         attempts -= 1
     return guessed,guess
 while(True):
