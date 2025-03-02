@@ -86,7 +86,7 @@ while(True):
     print("\nI think you have read the rules above")
     time.sleep(3)
     print("-"*40)
-    print("\tLet's begin the game:-")
+    print("\tLet's begin the game:-\n")
     print("-"*40)
     word = random.choice(words_list)
     guessed = 0
