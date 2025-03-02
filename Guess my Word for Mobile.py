@@ -4,7 +4,7 @@ import time
 import sys
 delay1 = 2
 delay2 = 3
-
+streaks = 0
 try:
     terminal_width = os.get_terminal_size().columns
 except OSError:
@@ -44,9 +44,8 @@ words_list = [ "ABLE", "ACID", "AUNT",
   "WAIT", "WANT", "WAVE", "WEAK", "WEAR", "WEST", "WIDE", "WIND", "WINE", "WISH", "WOLF", "WORD", "WORM", "WRAP",
   "YOGA",
   "ZERO", "ZINC", "ZONE"]
-def guessmyword(word,guessed):
+def guessmyword(word,guessed,streaks):
     attempts = 10
-    streaks = 0
     while(attempts >0):
         print("\nChances left: 🎲",attempts,"\tStreaks: 🔥",streaks)
         guess = input("\nEnter your Guess: ").upper()
@@ -61,9 +60,9 @@ def guessmyword(word,guessed):
         print("correct letters:",correct_letters,", correct position:", correct_position)
         if(correct_position == 4):
             print("Congratulations🎉!!\nYou have guessed the correct word !\n")
-            guessed = 1
             streaks += 1
-            return streaks,guessed
+            guessed = 1
+            return guessed,guess
         attempts -= 1
     return guessed,guess
 while(True):
