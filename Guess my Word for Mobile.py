@@ -75,7 +75,7 @@ while(True):
     sys.stdout.write('\033[F')  # Move cursor up one line.
     sys.stdout.write('\033[K')  # Clear to the end of line.
     print("-"*40)
-    print("    📜 \033[31mRules:-\033[0m".center(terminal_width))
+    print("\t📜 \033[31mRules:-\033[0m".center(terminal_width))
     print("-"*40)
     print("1. You have 10 chances🎲 to guess🎯.")
     time.sleep(2)
@@ -88,7 +88,7 @@ while(True):
     print("\nI think you have read the rules above")
     time.sleep(3)
     print("-"*40)
-    print("\t\tLet's begin the game:-")
+    print("\tLet's begin the game:-")
     print("-"*40)
     word = random.choice(words_list)
     guessed = 0
