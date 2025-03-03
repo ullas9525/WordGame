@@ -104,3 +104,4 @@ while(True):
         break
     elif(guessed == 0):
         print("\nYou have ran out of attempts🏳️.\nThe correct word was " + word)
+        streaks = 0
