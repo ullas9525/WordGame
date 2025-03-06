@@ -57,7 +57,6 @@ def guessmyword(word,guessed,streaks):
     attempts = 10
     while(attempts >0):
         print("Chances left: 🎲",attempts)
-        print("Streaks: 🔥",streaks)
         guess = input("\nEnter your Guess: ").upper()
         if(guess == "Q"):
             print("You have exited the game!!🏳️")
@@ -97,6 +96,7 @@ while(True):
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("Let's begin the game:-")
     word = random.choice(words_list)
+    print("Streaks: 🔥",streaks)
     guessed = 0
     guessed,guess,streaks = guessmyword(word,guessed,streaks)
     if(guess == "Q"):
