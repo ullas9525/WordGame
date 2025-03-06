@@ -87,7 +87,6 @@ while(True):
     time.sleep(delay1)
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("Let's begin the game:-")
-    print("Streaks: 🔥",streaks)
     while(True):
         print(flush = True)
         word = input("\bEnter a Word to guess for another player:").upper()
@@ -109,6 +108,7 @@ while(True):
             sys.stdout.write('\033[F')  # Move cursor up one line.
             sys.stdout.write('\033[K')  # Clear to the end of line.
             break
+    print("Streaks: 🔥",streaks)
     guessed = 0
     guessed,guess,streaks = guessmyword(word,guessed,streaks)
     if(guess == "Q"):
