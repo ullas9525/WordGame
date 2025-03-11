@@ -4,7 +4,7 @@ Welcome to the **WordGame Collection**! This repository contains multiple text-b
 
 ## Games Overview
 
-1. [Guess My Word(Two Players)](Guess My Word Two Players/README.md)  
+1. [Guess My Word(Two Players)](Guess%20My%20Word%20Two%20Players/README.md)  
    A fun guessing game for two players, one player secretly provides a word while the other player attempts to guess the word within a limited number of attempts.
 
 2. [Guess My Word](Guess%20My%20Word/README.md)  
