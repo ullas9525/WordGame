@@ -4,17 +4,16 @@ Welcome to the **WordGame Collection**! This repository contains multiple text-b
 
 ## Games Overview
 
-1. [Guess My Word(Two Players)](./Guess%20My%20Word%20%28Two%20Players%29/README.md)
-2. 
+1. [Guess My Word(Two Players)](Guess%20My%20Word%20Two%20Players/README.md)
    A fun guessing game for two players, one player secretly provides a word while the other player attempts to guess the word within a limited number of attempts.
 
-3. [Guess My Word](Guess%20My%20Word/README.md)  
+2. [Guess My Word](Guess%20My%20Word/README.md)  
    A single-player word-guessing game. Try to guess the secret word within a limited number of attempts.
 
-4. [Hand Cricket](Hand%20Cricket/README.md)  
+3. [Hand Cricket](Hand%20Cricket/README.md)  
    A text-based version of the popular “hand cricket” game where you and the computer take turns scoring runs.
 
-5. [Vocabulary Adventurous Game](Vocabulary%20Adventurous%20Game/README.md)  
+4. [Vocabulary Adventurous Game](Vocabulary%20Adventurous%20Game/README.md)  
    An Educational game to expand your vocabulary while having fun!
 
 ## How to Use
