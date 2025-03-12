@@ -5,31 +5,10 @@ import sys
 delay1 = 2
 delay2 = 3
 streaks = 0
-words_list = [ "ABLE", "ACID", "AUNT",
-  "BAKE", "BANK", "BASE", "BEAR", "BIKE", "BORE", "BOWL", "BUNK",
-  "CAKE", "CALM", "CARD", "CARE", "CAST", "CLAP", "CLIP", "CODE", "COIL", "COLD", "COST", "CUBE",
-  "DARE", "DARK", "DATE", "DEAL", "DICE", "DIRT", "DISH", "DOVE", "DUSK", "DUST",
-  "EARN", "EASY", "ECHO", "EDIT", "EPIC", "EXAM",
-  "FACE", "FAKE", "FAST", "FEAR", "FILE", "FILM", "FIRE", "FIST", "FIVE", "FLAG", "FOLD", "FORK", "FORT", "FOUL", "FOUR", "FROG", "FUEL",
-  "GAIN", "GAME", "GEAR", "GIFT", "GLOW", "GOAT", "GOLF", "GROW",
-  "HAIR", "HAND", "HARD", "HEAT", "HERB", "HINT", "HOLE", "HOME", "HOST", "HURT",
-  "ICON", "IDEA", "IDLE", "IDOL", "INCH", "INFO", "ITEM", "IRON",
-  "JAIL", "JOKE", "JUMP",
-  "KIND", "KING", "KITE",
-  "LADY", "LAMB", "LAND", "LAST", "LEAF", "LEFT", "LINE", "LINK", "LOCK", "LONG", "LOST", "LOUD", "LOVE", "LUCK",
-  "MAIL", "MAIN", "MALE", "MARK", "MASK", "MATE", "MEAL", "MICE", "MILK", "MINT", "MORE", "MOVE",
-  "NAIL", "NAME", "NEAR", "NEAT", "NEST", "NICE", "NOSE", "NOTE",
-  "OPEN", "ORAL", "ORES", "OVAL", "OVEN",
-  "PACE", "PAIR", "PALM", "PARK", "PART", "PAST", "PINK", "PLAY", "PORT", "POUR", "PURE",
-  "QUIT", "QUIZ",
-  "RACE", "RAIN", "REAL", "REST", "RICH", "RISK", "ROCK", "ROPE",
-  "SAFE", "SALT", "SAND", "SCAN", "SEAL", "SEAT", "SEND", "SHIP", "SHOCK", "SILK", "SKIP", "SLOT", "SOAP", "SOIL", "SORT", "SPOT", "STAR", "STOP", "SUIT", "SURE",
-  "TAIL", "TAPE", "TAXI", "TEAM", "TEAR", "TERM", "TILE", "TIME", "TIRE", "TOUR", "TRAP", "TRIP", "TRUE", "TUBE", "TURN",
-  "UNIT", "USER",
-  "VERB", "VISA", "VOTE",
-  "WAIT", "WANT", "WAVE", "WEAK", "WEAR", "WEST", "WIDE", "WIND", "WINE", "WISH", "WOLF", "WORD", "WORM", "WRAP",
-  "YOGA",
-  "ZERO", "ZINC", "ZONE"]
+words_list = []
+with open("Words.txt","r") as file:
+    for line in file:
+        words_list.append(line.strip())
 try:
     terminal_width = os.get_terminal_size().columns
 except OSError:
