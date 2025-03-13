@@ -11,7 +11,7 @@ try:
 except OSError:
     terminal_width = 80
 
-def guessword(guess,word):
+def guessword(guess,word): # Function to check the guessed letters and positions
     correct_letters = 0
     correct_position = 0
     for i in range (4):
@@ -20,10 +20,10 @@ def guessword(guess,word):
         if (guess[i] in word):
             correct_letters += 1
     return correct_letters,correct_position
-with open("Words.txt","r") as file:
+with open("Words.txt","r") as file: # Reading the words from the file
     for line in file:
         words_list.append(line.strip())
-def guessmyword(word,guessed,streaks):
+def guessmyword(word,guessed,streaks): # Main Function
     attempts = 10
     while(attempts >0):
         print("\nChances left: 🎲",attempts)
@@ -44,15 +44,15 @@ def guessmyword(word,guessed,streaks):
             return guessed,guess,streaks
         attempts -= 1
     return guessed,guess,streaks
-while(True):
-    print("-"*40)
+while(True): # infinite loop to play the game
+    print("-"*40) 
     print("\n🔤 \033[36mWelcome to the Word Guessing Game!!\033[0m\n".center(terminal_width))
     print("\n loading game....", flush=True)
     time.sleep(3)
     sys.stdout.write('\033[F')  # Move cursor up one line.
     sys.stdout.write('\033[K')  # Clear to the end of line.
     print("-"*40)
-    print("\t📜 \033[31mRules:-\033[0m".center(terminal_width))
+    print("\t📜 \033[31mRules:-\033[0m".center(terminal_width)) # Printing the rules of the game
     print("-"*40)
     print("1. You have 10 chances🎲 to guess🎯.")
     time.sleep(2)
@@ -68,7 +68,7 @@ while(True):
     print("\tLet's begin the game:-\n")
     print("-"*40)
     word = random.choice(words_list)
-    print("Streaks: 🔥",streaks)
+    print("Streaks: 🔥",streaks) # Streaks point
     guessed = 0
     guessed,guess,streaks = guessmyword(word,guessed,streaks)
     if(guess == "Q"):
