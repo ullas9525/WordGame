@@ -30,4 +30,12 @@ Welcome to the **WordGame Collection**! This repository contains multiple text-b
 3. **Navigate to a Game Folder**
    - Each game has its own folder. Open that folder and follow the instructions in its `README.md` to run the game.
 
-**Enjoy the WordGame Collection!** If you have any questions or issues, feel free to open an issue or contact us.
+**Enjoy the WordGame Collection!**
+
+## Contributing
+
+Feel free to report any bugs or suggest new features by creating an issue in the GitHub repository.
+
+## License
+
+This project is licensed under the MIT License. You can find the full license text in the LICENSE file.
