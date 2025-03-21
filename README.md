@@ -32,6 +32,9 @@ Welcome to the **WordGame Collection**! This repository contains multiple text-b
 
 **Enjoy the WordGame Collection!**
 
+This Game is in the demo stage, Crazy update is coming soon...
+So Stay Tuned!!
+
 ## Contributing
 
 Feel free to report any bugs or suggest new features by creating an issue in the GitHub repository.
